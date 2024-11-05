@@ -15,15 +15,17 @@
 
    <section class="flex">
 
-      <a href="../admin/dashboard.php" class="logo">Admin<span>Panel</span></a>
+      <a href="../admin/dashboard.php" class="logo">Trang</span>
+      Admin<span>
+      </a>
 
       <nav class="navbar">
-         <a href="../admin/dashboard.php">Reservex</a>
-         <a href="../admin/products.php">Products</a>
-         <a href="../admin/placed_orders.php">Orders</a>
-         <a href="../admin/admin_accounts.php">Admins</a>
-         <a href="../admin/users_accounts.php">Users</a>
-         <a href="../admin/messages.php">Messages</a>
+         <a href="../admin/dashboard.php">Quản lý chung</a>
+         <a href="../admin/products.php">Sản phẩm</a>
+         <a href="../admin/placed_orders.php">Đơn hàng</a>
+         <a href="../admin/admin_accounts.php">Admin</a>
+         <a href="../admin/users_accounts.php">Người dùng</a>
+         <a href="../admin/messages.php">Liên hệ khách hàng</a>
       </nav>
 
       <div class="icons">
@@ -38,12 +40,12 @@
             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
          ?>
          <p><?= $fetch_profile['name']; ?></p>
-         <a href="../admin/update_profile.php" class="btn">Update profile</a>
+         <a href="../admin/update_profile.php" class="btn">Cập nhật hồ sơ</a>
          <div class="flex-btn">
-            <a href="../admin/register_admin.php" class="option-btn">Register</a>
-            <a href="../admin/admin_login.php" class="option-btn">Login</a>
+            <a href="../admin/register_admin.php" class="option-btn">Đăng ký</a>
+            <a href="../admin/admin_login.php" class="option-btn">Đăng nhập</a>
          </div>
-         <a href="../components/admin_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
+         <a href="../components/admin_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">Đăng xuất</a> 
       </div>
 
    </section>

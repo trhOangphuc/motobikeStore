@@ -5,10 +5,10 @@
    --orange:#f39c12;
    --red:#e74c3c;
    --black:#333;
-   --white:#fff;
+   --white:#ffffff;
    --light-color:rgb(255, 119, 119);
    /* --light-bg:#eee; */
-   --light-bg:#c756e4;
+   --light-bg:#c891d6;
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
@@ -46,7 +46,7 @@ html{
 
 body{
    /* background-color: var(--light-bg); */
-   background-color: rgb(255, 210, 62);}
+   background-color: rgb(224, 197, 107);}
 
 
 section{

@@ -47,7 +47,7 @@ if(isset($_GET['delete'])){
 
 <section class="orders">
 
-<h1 class="heading">placed orders</h1>
+<h1 class="heading">Đơn hàng</h1>
 
 <div class="box-container">
 
@@ -73,15 +73,15 @@ if(isset($_GET['delete'])){
             <option value="completed">completed</option>
          </select>
         <div class="flex-btn">
-         <input type="submit" value="update" class="option-btn" name="update_payment">
-         <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">delete</a>
+         <input type="submit" value="Sửa" class="option-btn" name="update_payment">
+         <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Bạn muốn xóa đơn hàng này không ?');">delete</a>
         </div>
       </form>
    </div>
    <?php
          }
       }else{
-         echo '<p class="empty">no orders placed yet!</p>';
+         echo '<p class="empty">Chưa có đơn hàng nào !</p>';
       }
    ?>
 
