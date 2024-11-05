@@ -15,14 +15,13 @@
 
    <section class="flex">
 
-      <a href="index.php" class="logo">Group <span>4</span></a>
+      <a href="index.php" class="logo">Cửa hàng bán xe</a>
 
       <nav class="navbar">
-         <a href="index.php">Reserve</a>
-         <a href="about.php">About</a>
-         <a href="orders.php">Orders</a>
-         <a href="shop.php">Shop</a>
-         <a href="contact.php">Contact us</a>
+         <a href="index.php">Trang chủ</a>
+         <a href="orders.php">Đặt hàng</a>
+         <a href="shop.php">Sản phẩm</a>
+         <a href="contact.php">Liên hệ</a>
       </nav>
 
       <div class="icons">

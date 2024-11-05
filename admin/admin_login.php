@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
       $_SESSION['admin_id'] = $row['id'];
       header('location:dashboard.php');
    }else{
-      $message[] = 'incorrect username or password !';
+      $message[] = 'Sai tài khoản hoặc mật khẩu. Vui lòng kiểm tra lại !';
    }
 
 }
@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
       <p>tài khoản = <span>admin</span> & mật khẩu = <span>111</span></p>
       <input type="text" name="name" required placeholder="Nhập username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" required placeholder="Nhập password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="login now" class="btn" name="submit">
+      <input type="submit" value="Đăng nhập" class="btn" name="submit">
    </form>
 
 </section>

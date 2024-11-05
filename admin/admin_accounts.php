@@ -38,15 +38,13 @@ if(isset($_GET['delete'])){
 
 <section class="accounts">
 
-   <h1 class="heading">admin accounts</h1>
-
-   <div class="box-container">
+   <h1 class="heading">Quản lý tài khoản admin</h1>
 
    <div class="box">
-      <p>add new admin</p>
-      <a href="register_admin.php" class="option-btn">register admin</a>
-   </div>
+      <a href="register_admin.php" class="option2-btn">Đăng ký tài khoản admin</a>
+   </div><br><br>
 
+   <div class="box-container">
    <?php
       $select_accounts = $conn->prepare("SELECT * FROM `admins`");
       $select_accounts->execute();
@@ -54,10 +52,10 @@ if(isset($_GET['delete'])){
          while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){   
    ?>
    <div class="box">
-      <p> admin id : <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> admin name : <span><?= $fetch_accounts['name']; ?></span> </p>
+      <p> ID : <span><?= $fetch_accounts['id']; ?></span> </p>
+      <p> Tên tài khoản : <span><?= $fetch_accounts['name']; ?></span> </p>
       <div class="flex-btn">
-         <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account?')" class="delete-btn">delete</a>
+         <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('Bạn có muốn xóa tài khoản này không ?')" class="delete-btn">delete</a>
          <?php
             if($fetch_accounts['id'] == $admin_id){
                echo '<a href="update_profile.php" class="option-btn">update</a>';
@@ -68,7 +66,7 @@ if(isset($_GET['delete'])){
    <?php
          }
       }else{
-         echo '<p class="empty">no accounts available!</p>';
+         echo '<p class="empty">Không có tài khoản nào hợp lệ!</p>';
       }
    ?>
 

@@ -46,7 +46,7 @@ if(isset($_GET['delete'])){
 
 <section class="accounts">
 
-   <h1 class="heading">user accounts</h1>
+   <h1 class="heading">Tài khoản người dùng</h1>
 
    <div class="box-container">
 
@@ -57,9 +57,9 @@ if(isset($_GET['delete'])){
          while($fetch_accounts = $select_accounts->fetch(PDO::FETCH_ASSOC)){   
    ?>
    <div class="box">
-      <p> user id : <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> username : <span><?= $fetch_accounts['name']; ?></span> </p>
-      <p> email : <span><?= $fetch_accounts['email']; ?></span> </p>
+      <p> Id người dùng : <span><?= $fetch_accounts['id']; ?></span> </p>
+      <p> Tên người dùng : <span><?= $fetch_accounts['name']; ?></span> </p>
+      <p> Email : <span><?= $fetch_accounts['email']; ?></span> </p>
       <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account? the user related information will also be delete!')" class="delete-btn">delete</a>
    </div>
    <?php

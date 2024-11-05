@@ -38,7 +38,7 @@ if(isset($_GET['delete'])){
 
 <section class="contacts">
 
-<h1 class="heading">messages</h1>
+<h1 class="heading">Tin nhắn của khách hàng</h1>
 
 <div class="box-container">
 

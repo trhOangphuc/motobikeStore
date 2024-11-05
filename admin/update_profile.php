@@ -28,18 +28,18 @@ if(isset($_POST['submit'])){
    $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
 
    if($old_pass == $empty_pass){
-      $message[] = 'please enter old password!';
+      $message[] = 'Vui lòng nhập mật khẩu cũ!';
    }elseif($old_pass != $prev_pass){
-      $message[] = 'old password not matched!';
+      $message[] = 'Mật khẩu cũ không khớp!';
    }elseif($new_pass != $confirm_pass){
-      $message[] = 'confirm password not matched!';
+      $message[] = 'Nhập lại mật khẩu không khớp!';
    }else{
       if($new_pass != $empty_pass){
          $update_admin_pass = $conn->prepare("UPDATE `admins` SET password = ? WHERE id = ?");
          $update_admin_pass->execute([$confirm_pass, $admin_id]);
-         $message[] = 'password updated successfully!';
+         $message[] = 'Thay đổi mật khẩu thành công !';
       }else{
-         $message[] = 'please enter a new password!';
+         $message[] = 'Vui lòng nhập mật khẩu mới!';
       }
    }
    
@@ -67,13 +67,13 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
-      <h3>update profile</h3>
+      <h3>Cập nhật tài khoản</h3>
       <input type="hidden" name="prev_pass" value="<?= $fetch_profile['password']; ?>">
-      <input type="text" name="name" value="<?= $fetch_profile['name']; ?>" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="old_pass" placeholder="enter old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="new_pass" placeholder="enter new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="confirm_pass" placeholder="confirm new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="update now" class="btn" name="submit">
+      <input type="text" name="name" value="<?= $fetch_profile['name']; ?>" required placeholder="Nhập tên người dùng" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="old_pass" placeholder="Nhập mật khẩu cũ" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="new_pass" placeholder="Nhập mật khẩu mới" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="confirm_pass" placeholder="Nhập lại mật khẩu" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="Cập nhật" class="btn" name="submit">
    </form>
 
 </section>

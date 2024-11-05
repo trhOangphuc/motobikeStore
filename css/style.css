@@ -3,10 +3,10 @@
 :root{
    --main-color:#2980b9;
    --orange:#f39c12;
-   --red:#e74c3c;
+   --red:#000000;
    --black:#333;
    --white:#ffffff;
-   --light-color:rgb(255, 119, 119);
+   --light-color:rgb(37, 30, 30);
    /* --light-bg:#eee; */
    --light-bg:#c891d6;
    --border:.2rem solid var(--black);
