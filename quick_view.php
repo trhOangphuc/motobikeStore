@@ -20,7 +20,7 @@ include 'components/wishlist_cart.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>quick view</title>
+   <title>Chi tiết sản phẩm</title>
    
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -35,7 +35,7 @@ include 'components/wishlist_cart.php';
 
 <section class="quick-view">
 
-   <h1 class="heading">quick view</h1>
+   <h1 class="heading">Chi tiết sản phẩm</h1>
 
    <?php
      $pid = $_GET['pid'];
@@ -63,13 +63,13 @@ include 'components/wishlist_cart.php';
          <div class="content">
             <div class="name"><?= $fetch_product['name']; ?></div>
             <div class="flex">
-               <div class="price"><span>₱</span><?= $fetch_product['price']; ?><span>/-</span></div>
+               <div class="price"><?= $fetch_product['price']; ?><span> VNĐ</span></div>
                <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
             </div>
             <div class="details"><?= $fetch_product['details']; ?></div>
             <div class="flex-btn">
-               <input type="submit" value="add to cart" class="btn" name="add_to_cart">
-               <input class="option-btn" type="submit" name="add_to_wishlist" value="add to wishlist">
+               <input type="submit" value="Thêm vào giỏ hàng" class="btn" name="add_to_cart">
+               <input class="option-btn" type="submit" name="add_to_wishlist" value="Thêm vào yêu thích">
             </div>
          </div>
       </div>

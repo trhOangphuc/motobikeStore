@@ -21,7 +21,7 @@ if(isset($_POST['order'])){
    $email = filter_var($email, FILTER_SANITIZE_STRING);
    $method = $_POST['method'];
    $method = filter_var($method, FILTER_SANITIZE_STRING);
-   $address = 'flat no. '. $_POST['flat'] .', '. $_POST['street'] .', '. $_POST['city'] .', '. $_POST['state'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
+   $address =  $_POST['flat'] .', '. $_POST['street'] .', '. $_POST['city'] .', '. $_POST['state'];
    $address = filter_var($address, FILTER_SANITIZE_STRING);
    $total_products = $_POST['total_products'];
    $total_price = $_POST['total_price'];
@@ -37,9 +37,9 @@ if(isset($_POST['order'])){
       $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
       $delete_cart->execute([$user_id]);
 
-      $message[] = 'order placed successfully!';
+      $message[] = 'Đơn hàng đã được đặt thành công !';
    }else{
-      $message[] = 'your cart is empty';
+      $message[] = 'Giỏ hàng của bạn trống !';
    }
 
 }
@@ -52,7 +52,7 @@ if(isset($_POST['order'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>checkout</title>
+   <title>Thông tin đặt hàng</title>
    
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -69,7 +69,7 @@ if(isset($_POST['order'])){
 
    <form action="" method="POST">
 
-   <h3>your orders</h3>
+   <h3>Đặt hàng</h3>
 
       <div class="display-orders">
       <?php
@@ -79,70 +79,62 @@ if(isset($_POST['order'])){
          $select_cart->execute([$user_id]);
          if($select_cart->rowCount() > 0){
             while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
-               $cart_items[] = $fetch_cart['name'].' ('.$fetch_cart['price'].' x '. $fetch_cart['quantity'].') - ';
+               $cart_items[] = $fetch_cart['name'].' ('.$fetch_cart['price'].' x '. $fetch_cart['quantity'].')';
                $total_products = implode($cart_items);
                $grand_total += ($fetch_cart['price'] * $fetch_cart['quantity']);
       ?>
-         <p> <?= $fetch_cart['name']; ?> <span>(<?= '₱'.$fetch_cart['price'].'/- x '. $fetch_cart['quantity']; ?>)</span> </p>
+         <p> <?= $fetch_cart['name']; ?> <span>(<?= $fetch_cart['price'].'VNĐ x '. $fetch_cart['quantity']; ?>)</span> </p>
       <?php
             }
          }else{
-            echo '<p class="empty">your cart is empty!</p>';
+            echo '<p class="empty">Giỏ hàng của bạn trống !</p>';
          }
       ?>
          <input type="hidden" name="total_products" value="<?= $total_products; ?>">
          <input type="hidden" name="total_price" value="<?= $grand_total; ?>" value="">
-         <div class="grand-total">grand total : <span>₱<?= $grand_total; ?>/-</span></div>
+         <div class="grand-total">Thành tiền : <span><?= $grand_total; ?> VNĐ</span></div>
       </div>
 
-      <h3>place your orders</h3>
+      <h3>Thông tin của bạn</h3>
 
       <div class="flex">
          <div class="inputBox">
-            <span>your name :</span>
-            <input type="text" name="name" placeholder="enter your name" class="box" maxlength="20" required>
+            <span>Họ và tên :</span>
+            <input type="text" name="name" placeholder="Nhập họ tên" class="box" maxlength="20" required>
          </div>
          <div class="inputBox">
-            <span>your number :</span>
-            <input type="number" name="number" placeholder="enter your number" class="box" min="0" max="9999999999" onkeypress="if(this.value.length == 10) return false;" required>
+            <span>Số điện thoại :</span>
+            <input type="number" name="number" placeholder="Nhập số điện thoại" class="box" min="0" max="9999999999" onkeypress="if(this.value.length == 10) return false;" required>
          </div>
          <div class="inputBox">
-            <span>your email :</span>
-            <input type="email" name="email" placeholder="enter your email" class="box" maxlength="50" required>
+            <span>Email :</span>
+            <input type="email" name="email" placeholder="Nhập Email" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>payment method :</span>
+            <span>Phương thức thanh toán :</span>
             <select name="method" class="box" required>
-               <option value="cash on delivery">cash on delivery</option>
-               <option value="credit card">credit card</option>
-               <option value="paytm">paytm</option>
-               <option value="paypal">paypal</option>
+               <option value="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</option>
+               <option value="Thẻ tín dụng">Thẻ tín dụng</option>
+               <option value="Thanh toán">Thanh toán</option>
             </select>
          </div>
          <div class="inputBox">
-            <span>address line 01 :</span>
-            <input type="text" name="flat" placeholder="e.g. flat number" class="box" maxlength="50" required>
+            <span>Địa chỉ nhà :</span>
+            <input type="text" name="flat" placeholder="Nhập số nhà" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>address line 02 :</span>
-            <input type="text" name="street" placeholder="e.g. street name" class="box" maxlength="50" required>
+            <span>Địa chỉ quận/huyện :</span>
+            <input type="text" name="street" placeholder="Nhập đường, quận/huyện" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>city :</span>
-            <input type="text" name="city" placeholder="e.g. mumbai" class="box" maxlength="50" required>
+            <span>Thành phố :</span>
+            <input type="text" name="city" placeholder="Nhập tên thành phố" class="box" maxlength="50" required>
          </div>
          <div class="inputBox">
-            <span>state :</span>
-            <input type="text" name="state" placeholder="e.g. maharashtra" class="box" maxlength="50" required>
+            <span>Ghi chú :</span>
+            <input type="text" name="state" placeholder="Nhập ghi chú" class="box" maxlength="50" required>
          </div>
-         <div class="inputBox">
-            <span>country :</span>
-            <input type="text" name="country" placeholder="e.g. India" class="box" maxlength="50" required>
-         </div>
-         <div class="inputBox">
-            <span>pin code :</span>
-            <input type="number" min="0" name="pin_code" placeholder="e.g. 123456" min="0" max="999999" onkeypress="if(this.value.length == 6) return false;" class="box" required>
-         </div>
+ 
       </div>
 
       <input type="submit" name="order" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>" value="place order">

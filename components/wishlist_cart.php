@@ -22,13 +22,13 @@ if(isset($_POST['add_to_wishlist'])){
       $check_cart_numbers->execute([$name, $user_id]);
 
       if($check_wishlist_numbers->rowCount() > 0){
-         $message[] = 'already added to wishlist!';
+         $message[] = 'Đã thêm vào yêu thích !';
       }elseif($check_cart_numbers->rowCount() > 0){
-         $message[] = 'already added to cart!';
+         $message[] = 'Đã thêm vào giỏ hàng thành công !';
       }else{
          $insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES(?,?,?,?,?)");
          $insert_wishlist->execute([$user_id, $pid, $name, $price, $image]);
-         $message[] = 'added to wishlist!';
+         $message[] = 'Thêm thành công !';
       }
 
    }
@@ -69,7 +69,7 @@ if(isset($_POST['add_to_cart'])){
 
          $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES(?,?,?,?,?,?)");
          $insert_cart->execute([$user_id, $pid, $name, $price, $qty, $image]);
-         $message[] = 'added to cart!';
+         $message[] = 'Thêm vào giỏ hàng thành công';
          
       }
 

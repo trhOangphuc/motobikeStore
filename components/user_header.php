@@ -15,7 +15,7 @@
 
    <section class="flex">
 
-      <a href="index.php" class="logo">Cửa hàng bán xe</a>
+      <a href="index.php" class="logo">N3MotosShop</a>
 
       <nav class="navbar">
          <a href="index.php">Trang chủ</a>
@@ -48,21 +48,12 @@
             if($select_profile->rowCount() > 0){
             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
          ?>
-         <p><?= $fetch_profile["name"]; ?></p>
-         <a href="update_user.php" class="btn">update profile</a>
-         <div class="flex-btn">
-            <a href="user_register.php" class="option-btn">register</a>
-            <a href="user_login.php" class="option-btn">login</a>
-         </div>
-         <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
+         <center>Xin chào</center> <p><?= $fetch_profile["name"]; ?></p>
+         <a href="update_user.php" class="btn">Đổi mật khẩu</a>
+         <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('Bạn có muốn đăng xuất ?');">Đăng xuất</a> 
          <?php
             }else{
          ?>
-         <p>please login or register first!</p>
-         <div class="flex-btn">
-            <a href="user_register.php" class="option-btn">register</a>
-            <a href="user_login.php" class="option-btn">login</a>
-         </div>
          <?php
             }
          ?>      

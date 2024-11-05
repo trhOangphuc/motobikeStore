@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
 
 :root{
-   --main-color:#2980b9;
+   --main-color:#dbee85;
    --orange:#f39c12;
    --red:#e74c3c;
-   --black:#444;
-   --white:#b5e1ee;
-   --light-color:#fafafa;
+   --black: black;
+   --white:#62cdee;
+   --light-color:#524949;
    /* original */
    /* --light-bg:#f5f5f5;  */
    /* mystyle */
-   --light-bg: rgb(207, 207, 207);
+   --light-bg: rgb(231, 226, 226);
 
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
@@ -84,7 +84,7 @@ section{
 .btn:hover,
 .delete-btn:hover,
 .option-btn:hover{
-   background-color: var(--black);
+   background-color: rgb(117, 102, 102);
 }
 
 .btn{
@@ -96,7 +96,7 @@ section{
 }
 
 .option2-btn{
-   background-color: rgb(125, 113, 238);
+   background-color: rgb(125, 177, 245);
 }
 
 .delete-btn{
@@ -134,7 +134,7 @@ section{
 }
 
 .message i:hover{
-   color:var(--black);
+   color: rgb(97, 93, 93);
 }
 
 .empty{
@@ -378,7 +378,7 @@ section{
 }
 
 .price{
-   color: rgb(19, 3, 243);
+   color: rgb(5, 121, 230);
 }
 
 .show-products .box-container .box {
@@ -479,7 +479,7 @@ section{
 }
 
 .orders .box-container .box p span{
-   color:var(--main-color);
+   color:black;
 }
 
 .orders .box-container .select{
@@ -488,7 +488,7 @@ section{
    background-color: var(--light-bg);
    padding:1rem;
    font-size: 1.8rem;
-   color:var(--black);
+   color:black;
    border-radius: .5rem;
    border:var(--border);
 }
@@ -513,12 +513,12 @@ section{
 
 .accounts .box-container .box p{
    font-size: 2rem;
-   color:var(--light-color);
+   color:black;
    margin: 1rem 0;
 }
 
 .accounts .box-container .box p span{
-   color:var(--main-color);
+   color:black;
 }
 
 .contacts .box-container{
@@ -541,12 +541,12 @@ section{
 .contacts .box-container .box p{
    line-height: 1.5;
    font-size: 2rem;
-   color:var(--light-color);
+   color:black;
    margin:1rem 0;
 }
 
 .contacts .box-container .box p span{
-   color:var(--main-color);
+   color:black;
 }
 
 

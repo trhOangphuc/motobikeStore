@@ -18,7 +18,7 @@ if(!isset($admin_id)){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>dashboard</title>
+   <title>Trang chủ Admin</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -52,7 +52,7 @@ if(!isset($admin_id)){
                }
             }
          ?>
-         <h3><span>$</span><?= $total_pendings; ?><span>VNĐ</span></h3>
+         <h3><span></span><?= $total_pendings; ?><span> VNĐ</span></h3>
          <p>Đơn hàng chờ xử lý</p>
          <a href="placed_orders.php" class="btn">Quản lý đơn hàng chờ xử lý</a>
       </div>
@@ -68,7 +68,7 @@ if(!isset($admin_id)){
                }
             }
          ?>
-         <h3><span>$</span><?= $total_completes; ?><span>VNĐ</span></h3>
+         <h3><span></span><?= $total_completes; ?><span> VNĐ</span></h3>
          <p>Đơn hàng đã hoàn tất</p>
          <a href="placed_orders.php" class="btn">Quản lý đơn hàng đã hoàn tất</a>
       </div>

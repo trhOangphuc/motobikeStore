@@ -33,7 +33,7 @@ if(isset($_GET['delete_all'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>wishlist</title>
+   <title>Sản phẩm yêu thích</title>
    
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -48,7 +48,7 @@ if(isset($_GET['delete_all'])){
 
 <section class="products">
 
-   <h3 class="heading">your wishlist</h3>
+   <h3 class="heading">Sản phẩm yêu thích của bạn</h3>
 
    <div class="box-container">
 
@@ -68,40 +68,29 @@ if(isset($_GET['delete_all'])){
       <input type="hidden" name="image" value="<?= $fetch_wishlist['image']; ?>">
       <a href="quick_view.php?pid=<?= $fetch_wishlist['pid']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_wishlist['image']; ?>" alt="">
-      <div class="name"><?= $fetch_wishlist['name']; ?></div>
+      <div class="name">Tên sản phẩm : <?= $fetch_wishlist['name']; ?></div>
       <div class="flex">
-         <div class="price">₱<?= $fetch_wishlist['price']; ?>/-</div>
+         <div class="price"><?= $fetch_wishlist['price']; ?> VNĐ</div>
          <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
-      <input type="submit" value="add to cart" class="btn" name="add_to_cart">
-      <input type="submit" value="delete item" onclick="return confirm('delete this from wishlist?');" class="delete-btn" name="delete">
+      <input type="submit" value="Thêm vào giỏ hàng" class="btn" name="add_to_cart">
+      <input type="submit" value="Xóa khỏi yêu thích" onclick="return confirm('delete this from wishlist?');" class="delete-btn" name="delete">
    </form>
    <?php
       }
    }else{
-      echo '<p class="empty">your wishlist is empty</p>';
+      echo '<p class="empty">Bạn chưa có sản phẩm yêu thích nào !</p>';
    }
    ?>
    </div>
 
    <div class="wishlist-total">
-      <p>grand total : <span>$<?= $grand_total; ?>/-</span></p>
-      <a href="shop.php" class="option-btn">continue shopping</a>
-      <a href="wishlist.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('delete all from wishlist?');">delete all item</a>
+      <p>Tổng thành tiền : <span><?= $grand_total; ?> VNĐ</span></p>
+      <a href="shop.php" class="option-btn">Tiếp tục mua sắm</a>
+      <a href="wishlist.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('Bạn chắc chắn muốn xóa sản phẩm này khỏi yêu thích không ?');">Xóa tất cả khỏi yêu thích</a>
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php include 'components/footer.php'; ?>
