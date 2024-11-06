@@ -62,7 +62,18 @@ if(isset($_GET['delete'])){
       <p> Người mua : <span><?= $fetch_orders['name']; ?></span> </p>
       <p> Số điện thoại : <span><?= $fetch_orders['number']; ?></span> </p>
       <p> Địa chỉ : <span><?= $fetch_orders['address']; ?></span> </p>
-      <p> Tổng sản phẩm : <span><?= $fetch_orders['total_products']; ?></span> </p>
+      <p>Tổng sản phẩm:</p>
+         <?php 
+            $total_products = "Ducati 1100 Sport Pro (500000000 x 3) Honda Air Blade 160i (45000000 x 1) Honda CB 500 Hornet (185000000 x 1)";
+            
+            $products = preg_split('/(?<=\))\s+/', $total_products); 
+
+            foreach ($products as $product) {
+               echo "<p>" ."<span>" . htmlspecialchars($product) ."</span>" ."</p>";
+            }
+         ?>
+
+
       <p> Tổng giá : <span><?= number_format($fetch_orders['total_price'], 0, ',', '.'); ?> VNĐ</span> </p>
 
       <p> Phương thức thanh toán : <span><?= $fetch_orders['method']; ?></span> </p>
