@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
 
 :root{
-   --main-color:#4faae7;
+   --main-color:#75c0f1;
    --orange:#f0f0f0;
    --red:#000000;
    --black:#333;
    --white:#ffffff;
    --light-color:rgb(37, 30, 30);
    /* --light-bg:#eee; */
-   --light-bg:#c891d6;
+   --light-bg:#ebc6f5;
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
@@ -81,7 +81,7 @@ section{
 .btn:hover,
 .delete-btn:hover,
 .option-btn:hover{
-   background-color: rgb(154, 154, 223);
+   background-color: rgb(169, 169, 248);
 }
 
 .btn{
@@ -93,7 +93,7 @@ section{
 }
 
 .delete-btn{
-   background-color: rgb(231, 47, 47);
+   background-color: rgb(240, 150, 150);
 }
 
 .flex-btn{
