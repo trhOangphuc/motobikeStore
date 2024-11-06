@@ -71,14 +71,14 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
-      <h3>update now</h3>
+      <h3>Thay đổi mật khẩu</h3>
       <input type="hidden" name="prev_pass" value="<?= $fetch_profile["password"]; ?>">
-      <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" value="<?= $fetch_profile["name"]; ?>">
-      <input type="email" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile["email"]; ?>">
-      <input type="password" name="old_pass" placeholder="enter your old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="new_pass" placeholder="enter your new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="cpass" placeholder="confirm your new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="update now" class="btn" name="submit">
+      <input type="text" name="name" required placeholder="Nhập tên" maxlength="20"  class="box" value="<?= $fetch_profile["name"]; ?>">
+      <input type="email" name="email" required placeholder="Nhập Email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile["email"]; ?>">
+      <input type="password" name="old_pass" placeholder="Nhập mật khẩu cũ " maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="new_pass" placeholder="Nhập mật khẩu" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="cpass" placeholder="Nhập lại mật khẩu" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="Cập nhật" class="btn" name="submit">
    </form>
 
 </section>

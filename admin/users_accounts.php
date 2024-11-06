@@ -60,7 +60,7 @@ if(isset($_GET['delete'])){
       <p> Id người dùng : <span><?= $fetch_accounts['id']; ?></span> </p>
       <p> Tên người dùng : <span><?= $fetch_accounts['name']; ?></span> </p>
       <p> Email : <span><?= $fetch_accounts['email']; ?></span> </p>
-      <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account? the user related information will also be delete!')" class="delete-btn">delete</a>
+      <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account? the user related information will also be delete!')" class="delete-btn">Xoá</a>
    </div>
    <?php
          }

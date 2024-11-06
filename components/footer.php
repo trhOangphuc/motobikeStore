@@ -11,9 +11,9 @@
       <div class="box">
          <h3>Chi tiết liên hệ</h3>
          <a></i>Nhóm 3</a>
-         <a></i> Trần Hoàng Phúc</a>
-         <a></i> Nguyễn Công Tạo</a>
-         <a></i> Nguyễn Hồng Hà</a>
+         <a></i> Trần Hoàng Phúc - 21103100496 - 10/04/2003</a>
+         <a></i> Nguyễn Công Tạo - 21103100594 - 30/04/2003</a>
+         <a></i> Nguyễn Hồng Hà - 21103100575 - 11/10/2003</a>
       </div>
 
    </section>

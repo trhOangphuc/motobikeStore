@@ -132,12 +132,12 @@ if(isset($_POST['order'])){
          </div>
          <div class="inputBox">
             <span>Ghi chú :</span>
-            <input type="text" name="state" placeholder="Nhập ghi chú" class="box" maxlength="50" required>
+            <input type="text" name="ghichu" placeholder="Nhập ghi chú" class="box" maxlength="50" required>
          </div>
  
       </div>
 
-      <input type="submit" name="order" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>" value="place order">
+      <input type="submit" name="order" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>" value="Đồng ý">
 
    </form>
 

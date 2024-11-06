@@ -45,7 +45,7 @@
             <a href="../admin/register_admin.php" class="option-btn">Đăng ký</a>
             <a href="../admin/admin_login.php" class="option-btn">Đăng nhập</a>
          </div>
-         <a href="../components/admin_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">Đăng xuất</a> 
+         <a href="../components/admin_logout.php" class="delete-btn" onclick="return confirm('Bạn chắc chắn muốn đăng xuất không ?');">Đăng xuất</a> 
       </div>
 
    </section>

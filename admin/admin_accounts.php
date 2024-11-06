@@ -55,10 +55,10 @@ if(isset($_GET['delete'])){
       <p> ID : <span><?= $fetch_accounts['id']; ?></span> </p>
       <p> Tên tài khoản : <span><?= $fetch_accounts['name']; ?></span> </p>
       <div class="flex-btn">
-         <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('Bạn có muốn xóa tài khoản này không ?')" class="delete-btn">delete</a>
+         <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('Bạn có muốn xóa tài khoản này không ?')" class="delete-btn">Xoá</a>
          <?php
             if($fetch_accounts['id'] == $admin_id){
-               echo '<a href="update_profile.php" class="option-btn">update</a>';
+               echo '<a href="update_profile.php" class="option-btn">Sửa</a>';
             }
          ?>
       </div>

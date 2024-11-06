@@ -29,7 +29,7 @@ if(isset($_POST['update_qty'])){
    $qty = filter_var($qty, FILTER_SANITIZE_STRING);
    $update_qty = $conn->prepare("UPDATE `cart` SET quantity = ? WHERE id = ?");
    $update_qty->execute([$qty, $cart_id]);
-   $message[] = 'cart quantity updated';
+   $message[] = 'Cập nhật thành công';
 }
 
 ?>
@@ -72,26 +72,32 @@ if(isset($_POST['update_qty'])){
       <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
       <div class="name">Tên sản phẩm : <?= $fetch_cart['name']; ?></div>
       <div class="flex">
-         <div class="price"><?= $fetch_cart['price']; ?> VNĐ</div>
+         <div class="price"><?= number_format($fetch_cart['price'], 0, ',', '.'); ?> VNĐ</div>
+
          <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?= $fetch_cart['quantity']; ?>">
          <button type="submit" class="fas fa-edit" name="update_qty"></button>
       </div>
-      <div class="sub-total"> Tổng tiền sản phẩm : <span><?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?> VNĐ</span> </div>
-      <input type="submit" value="Xóa sản phẩm" onclick="return confirm('delete this from cart?');" class="delete-btn" name="delete">
+      <?php 
+          $sub_total = $fetch_cart['price'] * $fetch_cart['quantity'];
+      ?>
+      <div class="sub-total"> Tổng tiền sản phẩm : <span><?= number_format($sub_total, 0, ',', '.'); ?> VNĐ</span> </div>
+
+      <input type="submit" value="Xóa sản phẩm" onclick="return confirm('Bạn chắc chắn xoá khỏi giỏ hàng không?');" class="delete-btn" name="delete">
    </form>
    <?php
    $grand_total += $sub_total;
       }
    }else{
-      echo '<p class="empty">your cart is empty</p>';
+      echo '<p class="empty">Giỏ hàng của bạn đang trống !</p>';
    }
    ?>
    </div>
 
    <div class="cart-total">
-      <p>Tổng thanh toán : <span><?= $grand_total; ?> VNĐ</span></p>
+      <p>Tổng thanh toán : <span><?= number_format($grand_total, 0, ',', '.'); ?> VNĐ</span></p>
+
       <a href="shop.php" class="option-btn">Tiếp tục mua sắm</a>
-      <a href="cart.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không ?');">Xóa tất cả sản phẩm</a>
+      <a href="cart.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không ?');">Xóa tất cả khỏi giỏ hàng</a>
       <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">Thanh toán</a>
    </div>
 

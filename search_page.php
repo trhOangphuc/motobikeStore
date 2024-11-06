@@ -60,17 +60,17 @@ include 'components/wishlist_cart.php';
       <button class="fas fa-heart" type="submit" name="add_to_wishlist"></button>
       <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
-      <div class="name"><?= $fetch_product['name']; ?></div>
+      <div class="name">Tên sản phẩm : <?= $fetch_product['name']; ?></div>
       <div class="flex">
-         <div class="price"><span>₱</span><?= $fetch_product['price']; ?><span>/-</span></div>
+         <div class="price"><span></span><?= $fetch_product['price']; ?><span> VNĐ</span></div>
          <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
-      <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+      <input type="submit" value="Thêm vào giỏ hàng" class="btn" name="add_to_cart">
    </form>
    <?php
          }
       }else{
-         echo '<p class="empty">no products found!</p>';
+         echo '<p class="empty">Không tìm thấy sản phẩm nào !</p>';
       }
    }
    ?>

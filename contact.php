@@ -25,13 +25,13 @@ if(isset($_POST['send'])){
    $select_message->execute([$name, $email, $number, $msg]);
 
    if($select_message->rowCount() > 0){
-      $message[] = 'already sent message!';
+      $message[] = 'Gửi thành công !';
    }else{
 
       $insert_message = $conn->prepare("INSERT INTO `messages`(user_id, name, email, number, message) VALUES(?,?,?,?,?)");
       $insert_message->execute([$user_id, $name, $email, $number, $msg]);
 
-      $message[] = 'sent message successfully!';
+      $message[] = 'Gửi thành công !';
 
    }
 
@@ -46,7 +46,7 @@ if(isset($_POST['send'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>contact</title>
+   <title>Liên hệ</title>
    
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">

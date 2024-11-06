@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
       $_SESSION['user_id'] = $row['id'];
       header('location:index.php');
    }else{
-      $message[] = 'incorrect username or password!';
+      $message[] = 'Sai Email hoặc mật khẩu. Vui lòng thử lại';
    }
 
 }
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>login</title>
+   <title>Đăng nhập</title>
    
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">

@@ -49,12 +49,12 @@ if(isset($_GET['delete'])){
          while($fetch_message = $select_messages->fetch(PDO::FETCH_ASSOC)){
    ?>
    <div class="box">
-   <p> user id : <span><?= $fetch_message['user_id']; ?></span></p>
-   <p> name : <span><?= $fetch_message['name']; ?></span></p>
-   <p> email : <span><?= $fetch_message['email']; ?></span></p>
-   <p> number : <span><?= $fetch_message['number']; ?></span></p>
-   <p> message : <span><?= $fetch_message['message']; ?></span></p>
-   <a href="messages.php??delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
+   <p> ID người dùng : <span><?= $fetch_message['user_id']; ?></span></p>
+   <p> Họ tên : <span><?= $fetch_message['name']; ?></span></p>
+   <p> Email : <span><?= $fetch_message['email']; ?></span></p>
+   <p> Số điện thoại : <span><?= $fetch_message['number']; ?></span></p>
+   <p> Nội dung : <span><?= $fetch_message['message']; ?></span></p>
+   <a href="messages.php??delete=<?= $fetch_message['id']; ?>" onclick="return confirm('Bán có muốn xóa liên hệ này không ?');" class="delete-btn">Xoá</a>
    </div>
    <?php
          }
@@ -66,16 +66,6 @@ if(isset($_GET['delete'])){
 </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
 
 
 <script src="../js/admin_script.js"></script>

@@ -49,7 +49,7 @@ if(isset($_POST['add_product'])){
 
       if($insert_products){
          if($image_size_01 > 2000000 OR $image_size_02 > 2000000 OR $image_size_03 > 2000000){
-            $message[] = 'Kích thước ảnh quá lơn !';
+            $message[] = 'Kích thước ảnh lớn !';
          }else{
             move_uploaded_file($image_tmp_name_01, $image_folder_01);
             move_uploaded_file($image_tmp_name_02, $image_folder_02);
@@ -129,7 +129,7 @@ if(isset($_GET['delete'])){
         </div>
          <div class="inputBox">
             <span>Chi tiết (bắt buộc)</span>
-            <textarea name="details" placeholder="enter product details" class="box" required maxlength="500" cols="30" rows="10"></textarea>
+            <textarea name="details" placeholder="Chi tiết sản phẩm" class="box" required maxlength="500" cols="30" rows="10"></textarea>
          </div>
       </div>
       
@@ -140,7 +140,7 @@ if(isset($_GET['delete'])){
 
 <section class="show-products">
 
-   <h1 class="heading">Thêm sản phẩm</h1>
+   <h1 class="heading">Sản phẩm</h1>
 
    <div class="box-container">
 
@@ -153,11 +153,11 @@ if(isset($_GET['delete'])){
    <div class="box">
       <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="price"><?= $fetch_products['price']; ?></span>VNĐ</div>
+      <div class="price"><span><?= number_format($fetch_products['price'], 0, ',', '.'); ?> VNĐ</span></div>
       <div class="details"><span><?= $fetch_products['details']; ?></span></div>
       <div class="flex-btn">
          <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">Sửa</a>
-         <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">Xóa</a>
+         <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Bạn có muốn xoá sản phẩm này không ?s');">Xóa</a>
       </div>
    </div>
    <?php

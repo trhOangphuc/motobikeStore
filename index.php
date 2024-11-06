@@ -62,7 +62,7 @@ include 'components/wishlist_cart.php';
             <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
             <div class="name">Tên sản phẩm : <?= $fetch_product['name']; ?></div>
             <div class="flex">
-               <div class="price"><span></span><?= $fetch_product['price']; ?><span> VNĐ</span></div>
+               <div class="price"><span></span><?= number_format($fetch_product['price'], 0, ',', '.'); ?><span> VNĐ</span></div>
                <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
             </div>
             <input type="submit" value="Thêm vào giỏ hàng" class="btn" name="add_to_cart">
@@ -70,7 +70,7 @@ include 'components/wishlist_cart.php';
          <?php
             }
          }else{
-            echo '<p class="empty">no products added yet!</p>';
+            echo '<p class="empty">Chưa có sản phẩm nào được thêm vào!</p>';
          }
          ?>
 
@@ -81,6 +81,7 @@ include 'components/wishlist_cart.php';
          </div>
 
       </section>
+      <h3 class="heading">Vào sản phẩm để xem thêm</h3>
 
       <?php include 'components/footer.php'; ?>
 
@@ -143,6 +144,5 @@ include 'components/wishlist_cart.php';
       });
 
 </script>
-
 </body>
 </html>

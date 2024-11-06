@@ -45,21 +45,22 @@
          <?php          
             $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
             $select_profile->execute([$user_id]);
-            if($select_profile->rowCount() > 0){
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            if ($select_profile->rowCount() > 0) {
+               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
          ?>
-         <center>Xin chào</center> <p><?= $fetch_profile["name"]; ?></p>
-         <a href="update_user.php" class="btn">Đổi mật khẩu</a>
-         <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('Bạn có muốn đăng xuất ?');">Đăng xuất</a> 
+            <center>Xin chào</center> <p><?= $fetch_profile["name"]; ?></p>
+            <a href="update_user.php" class="btn">Đổi mật khẩu</a>
+            <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('Bạn có muốn đăng xuất ?');">Đăng xuất</a> 
          <?php
-            }else{
+            } else {
          ?>
+            <a href="user_login.php" class="option-btn">Đăng Nhập</a>
+            <a href="user_register.php" class="btn">Đăng ký</a>
          <?php
             }
          ?>      
-         
-         
       </div>
+
 
    </section>
 

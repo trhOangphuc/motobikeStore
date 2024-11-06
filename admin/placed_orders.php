@@ -63,7 +63,8 @@ if(isset($_GET['delete'])){
       <p> Số điện thoại : <span><?= $fetch_orders['number']; ?></span> </p>
       <p> Địa chỉ : <span><?= $fetch_orders['address']; ?></span> </p>
       <p> Tổng sản phẩm : <span><?= $fetch_orders['total_products']; ?></span> </p>
-      <p> Tổng giá : <span><?= $fetch_orders['total_price']; ?> VND</span> </p>
+      <p> Tổng giá : <span><?= number_format($fetch_orders['total_price'], 0, ',', '.'); ?> VNĐ</span> </p>
+
       <p> Phương thức thanh toán : <span><?= $fetch_orders['method']; ?></span> </p>
       <form action="" method="post">
          <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
@@ -73,7 +74,7 @@ if(isset($_GET['delete'])){
          </select>
          <div class="flex-btn">
             <input type="submit" value="Sửa" class="option-btn" name="update_payment">
-            <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Bạn muốn xóa đơn hàng này không ?');">delete</a>
+            <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Bạn muốn xóa đơn hàng này không ?');">Xoá</a>
          </div>
       </form>
 
