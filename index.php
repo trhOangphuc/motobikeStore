@@ -81,7 +81,7 @@ include 'components/wishlist_cart.php';
          </div>
 
       </section>
-      <h3 class="heading">Vào sản phẩm để xem thêm</h3>
+      <a href="shop.php"><center><u><h1>Vào sản phẩm để xem thêm</h1></u></center></a>
 
       <?php include 'components/footer.php'; ?>
 

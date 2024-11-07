@@ -69,7 +69,7 @@ if(!isset($admin_id)){
                }
             }
          ?>
-         <h3><span></span><?= number_format($total_pendings, 0, ',', '.'); ?><span> VNĐ</span></h3>
+         <h3><span></span><?= number_format($total_completes, 0, ',', '.'); ?><span> VNĐ</span></h3>
 
          <p>Đơn hàng đã hoàn tất</p>
          <a href="placed_orders.php" class="btn">Quản lý đơn hàng đã hoàn tất</a>

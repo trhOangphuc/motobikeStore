@@ -14,9 +14,10 @@
 <header class="header">
 
    <section class="flex">
-
+   <div class="icons">
+      <img src="images/logo.PNG" alt="Logo" style="height: 30px; width: 30px; ">
       <a href="index.php" class="logo">N3MotosShop</a>
-
+   </div>
       <nav class="navbar">
          <a href="index.php">Trang chủ</a>
          <a href="orders.php">Đặt hàng</a>
